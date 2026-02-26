@@ -1,0 +1,61 @@
+<div class="login-container">
+    <div class="login-card animate__animated animate__fadeInUp">
+
+        <!-- Icono -->
+        <div class="logo animate__animated animate__zoomIn">
+        <div class="icon">🏢</div>
+        </div>
+
+        <h1 class="animate__animated animate__fadeIn">Crear Cuenta</h1>
+        <p class="subtitle animate__animated animate__fadeIn animate__delay-1s">
+        Regístrate para comenzar
+        </p>
+
+        <form (ngSubmit)="registrar()" class="animate__animated animate__fadeIn animate__delay-2s">
+
+        <label>Nombre</label>
+        <div class="input-group">
+            <span class="icon-input">👤</span>
+            <input type="text" [(ngModel)]="usuario.nombre" name="nombre" placeholder="Ingrese su nombre" required>
+        </div>
+
+        <label>Apellido Paterno</label>
+        <div class="input-group">
+            <span class="icon-input">👤</span>
+            <input type="text" [(ngModel)]="usuario.apellidoPaterno" name="ap" placeholder="Ingrese su apellido paterno">
+        </div>
+
+        <label>Apellido Materno</label>
+        <div class="input-group">
+            <span class="icon-input">👤</span>
+            <input type="text" [(ngModel)]="usuario.apellidoMaterno" name="am" placeholder="Ingrese su apellido materno">
+        </div>
+
+        <label>Número de Teléfono</label>
+        <div class="input-group">
+            <span class="icon-input">📞</span>
+            <input type="tel" [(ngModel)]="usuario.telefono" name="telefono" placeholder="Ingrese su número de teléfono">
+        </div>
+
+        <label>Correo Electrónico</label>
+        <div class="input-group">
+            <span class="icon-input">📧</span>
+            <input type="email" [(ngModel)]="usuario.correo" name="correo" placeholder="Ingrese su correo electrónico">
+        </div>
+
+        <label>Contraseña</label>
+        <div class="input-group">
+            <span class="icon-input">🔒</span>
+            <input type="password" [(ngModel)]="usuario.password" name="password" placeholder="Ingrese su contraseña">
+        </div>
+
+        <button type="submit">Registrar</button>
+        </form>
+
+        <p class="back animate__animated animate__fadeIn animate__delay-3s">
+        ¿Ya tienes una cuenta?
+        <a routerLink="/login">Inicia sesión</a>
+        </p>
+
+    </div>
+</div>

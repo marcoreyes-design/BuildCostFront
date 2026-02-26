@@ -1,0 +1,57 @@
+<div class="login-container">
+    <div
+        class="login-card
+            animate__animated
+            animate__fadeInUp
+            animate__faster">
+        <div class="logo animate__animated animate__zoomIn">
+        <div class="icon animate__animated animate__bounceIn">🏗️</div>
+        <span class="brand animate__animated animate__fadeIn animate__delay-1s">
+            BuildCost
+        </span>
+
+        </div>
+        <h1 class="animate__animated animate__fadeIn animate__delay-1s">
+        Presupuestos de Albañilería
+        </h1>
+        <p class="subtitle animate__animated animate__fadeIn animate__delay-1s">
+        Controla costos, materiales y obras
+        </p>
+        <form
+        class="animate__animated animate__fadeIn animate__delay-2s"
+        (submit)="login(); $event.preventDefault()">
+
+        <label>Correo electrónico</label>
+        <div class="input-group animate__animated animate__fadeInLeft">
+            <span class="icon-input"></span>
+            <input type="email" placeholder="tu@correo.com">
+        </div>
+
+        <label>Contraseña</label>
+        <div class="input-group animate__animated animate__fadeInRight">
+            <span class="icon-input"></span>
+            <input type="password" placeholder="••••••••">
+        </div>
+
+        <a
+            class="forgot animate__animated animate__fadeIn animate__delay-2s"
+            routerLink="/recuperar-contrasena">
+            ¿Olvidaste tu contraseña?
+        </a>
+
+        <button
+            type="submit"
+            class="animate__animated animate__pulse animate__infinite animate__slow"
+            routerLink="/home">
+            Iniciar Sesión
+        </button>
+        <a
+            class="register animate__animated animate__fadeIn animate__delay-3s"
+            routerLink="/registro">
+            ¿No tienes una cuenta?
+        </a>
+        </form>
+
+
+    </div>
+</div>

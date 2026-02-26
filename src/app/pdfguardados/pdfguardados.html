@@ -1,0 +1,47 @@
+<div class="app">
+
+    <app-sidebar></app-sidebar>
+    <main class="content">
+        <h1>PDF Guardados</h1>
+        <p class="subtitle">
+        Lista de presupuestos generados en formato PDF
+        </p>
+        <!-- Estado vacío -->
+        <div *ngIf="pdfs.length === 0" class="empty">
+        <div class="empty-box">
+            <span class="icon">📄</span>
+            <h3>No hay PDFs guardados</h3>
+            <p>
+            Los presupuestos que generes se guardarán automáticamente aquí
+            </p>
+        </div>
+        </div>
+        <!-- Lista -->
+        <div *ngIf="pdfs.length > 0" class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pdf of pdfs">
+                <td>{{ pdf.nombre }}</td>
+                <td>{{ pdf.fecha }}</td>
+                <td class="actions">
+                <button (click)="descargarPdf(pdf.url)">⬇</button>
+                <button (click)="eliminarPdf(pdf.id)">🗑</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="note">
+        <strong>Nota:</strong>
+        Los PDFs se generan automáticamente cuando creas un presupuesto.
+        </div>
+    </main>
+
+</div>

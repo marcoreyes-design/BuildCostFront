@@ -1,0 +1,69 @@
+    .app {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    height: 100vh;
+    background: #f4f6f9;
+    }
+
+    .content {
+    padding: 40px;
+    overflow-y: auto;
+    }
+
+    .subtitle {
+    color: #6b7280;
+    margin-bottom: 25px;
+    }
+
+    .empty {
+    margin-top: 30px;
+    }
+
+    .empty-box {
+    background: white;
+    border-radius: 15px;
+    padding: 60px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-top: 4px solid #f4a100;
+    }
+
+    .icon {
+    font-size: 50px;
+    display: block;
+    margin-bottom: 15px;
+    }
+
+    .table-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-top: 4px solid #f4a100;
+    }
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+
+    th, td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    }
+
+    .actions button {
+    margin-right: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    }
+
+    .note {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid #f4a100;
+    border-radius: 10px;
+    background: #fff7e6;
+    }

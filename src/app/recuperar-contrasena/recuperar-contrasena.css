@@ -1,0 +1,103 @@
+/* ===== CONTENEDOR ===== */
+    .login-container {
+    height: 100vh;
+    background: linear-gradient(135deg, #fff8dc, #f2f2f2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    /* ===== TARJETA ===== */
+    .login-card {
+    background: #ffffff;
+    width: 400px;
+    padding: 40px 35px;
+    border-radius: 18px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+    text-align: center;
+    border-top: 8px solid #f4b400;
+    }
+
+    /* ===== LOGO ===== */
+    .logo .icon {
+    background: #f4b400;
+    color: #000;
+    width: 65px;
+    height: 65px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: auto;
+    margin-bottom: 20px;
+    }
+
+    /* ===== TEXTOS ===== */
+    h1 {
+    font-size: 24px;
+    color: #222;
+    }
+
+    .subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+    }
+
+    /* ===== FORMULARIO ===== */
+    label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 6px;
+    }
+
+    .input-group {
+    display: flex;
+    align-items: center;
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 22px;
+    }
+
+    .icon-input {
+    margin-right: 10px;
+    }
+
+    input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    }
+
+    /* ===== BOTÓN ===== */
+    button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #f4b400, #e65100);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+
+    button:active {
+    transform: scale(0.97);
+    }
+
+    /* ===== LINK ===== */
+    .back {
+    margin-top: 22px;
+    }
+
+    .back a {
+    color: #e65100;
+    font-weight: bold;
+    text-decoration: none;
+}

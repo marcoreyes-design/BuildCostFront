@@ -1,0 +1,93 @@
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <app-sidebar></app-sidebar>
+
+    <!-- CONTENIDO -->
+    <main class="content">
+
+        <div class="header">
+        <div>
+            <h1>Datos por m²</h1>
+            <p class="subtitle">
+            Gestiona los precios de mano de obra por metro cuadrado
+            </p>
+        </div>
+
+        <button class="btn-nuevo" (click)="abrirModal()">
+            + Nuevo
+        </button>
+        </div>
+
+        <div class="table-container">
+
+        <table>
+            <thead>
+            <tr>
+                <th>Material</th>
+                <th>Precio por m²</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Pegado de block m²</td>
+                <td class="price">$150.00</td>
+                <td class="actions">✏️ 🗑️</td>
+            </tr>
+
+            <tr>
+                <td>Piso m²</td>
+                <td class="price">$200.00</td>
+                <td class="actions">✏️ 🗑️</td>
+            </tr>
+
+            <tr>
+                <td>Zapata m²</td>
+                <td class="price">$350.00</td>
+                <td class="actions">✏️ 🗑️</td>
+            </tr>
+
+            <tr>
+                <td>Losa primera planta m²</td>
+                <td class="price">$450.00</td>
+                <td class="actions">✏️ 🗑️</td>
+            </tr>
+
+            <tr>
+                <td>Cadena m²</td>
+                <td class="price">$280.00</td>
+                <td class="actions">✏️ 🗑️</td>
+            </tr>
+            </tbody>
+        </table>
+
+        </div>
+
+    </main>
+    <!-- MODAL -->
+    <div class="modal-overlay" *ngIf="mostrarModal">
+    <div class="modal">
+
+        <h2>Agregar Material</h2>
+
+        <div class="form-group">
+        <label>Nombre del Material</label>
+        <input type="text" placeholder="Ej: Pegado de block m²">
+        </div>
+
+        <div class="form-group">
+        <label>Precio por m²</label>
+        <input type="number" placeholder="150">
+        </div>
+
+        <div class="modal-actions">
+        <button class="btn-guardar">Guardar</button>
+        <button class="btn-cancelar" (click)="cerrarModal()">Cancelar</button>
+        </div>
+
+    </div>
+    </div>
+
+</div>
