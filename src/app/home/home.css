@@ -1,8 +1,150 @@
-    /* LAYOUT PRINCIPAL */
+    /* APP */
     .app {
-    display: grid;
-    grid-template-columns: 240px 1fr 300px;
+    display: flex;
+    width: 100%;
+    position: relative;
+    }
+    /* CONTENIDO */
+    .content {
+    flex: 1;
+    padding: 30px;
+    transition: margin-right 0.3s ease;
+    }
+    /* DRAWER */
+    .budget-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
     height: 100vh;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    z-index: 2000;
+    }
+
+    /* Cuando está abierto */
+    .app.drawer-open .budget-drawer {
+    transform: translateX(0);
+    }
+  .drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+.drawer-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.drawer-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+/* ITEM DEL PRESUPUESTO */
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 14px 16px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+  border-left: 4px solid #f4b400;
+}
+
+.budget-item:hover {
+  background: #f1f1f1;
+  transform: translateX(-3px);
+}
+
+.budget-item h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.budget-item small {
+  color: #777;
+  font-size: 12px;
+}
+/* FOOTER DEL DRAWER */
+.drawer-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background: #ffffff;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.total span {
+  color: #555;
+}
+
+.total strong {
+  font-size: 18px;
+  color: #000;
+}
+
+/* BOTÓN GENERAR */
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #f4b400, #ffcc33);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(244,180,0,0.3);
+}
+.empty-state {
+  text-align: center;
+  color: #999;
+  margin-top: 40px;
+  font-size: 14px;
+}
+    /* Empujar contenido cuando abre */
+    .app.drawer-open .content {
+    margin-right: 420px;
+    }
+    .note-trigger {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    }
+
+    .note-trigger img {
+    width: 30px;
+    height: 30px;
+    display: block;
     }
 
     .logout {
@@ -13,100 +155,111 @@
     cursor: pointer;
     font-weight: 500;
     }
-
-    /* CONTENIDO */
-    .content {
-    padding: 30px;
-    overflow-y: auto; 
-    height: 100vh;
-    }
-
     .content h1 {
     margin-top: 0;
     }
-
     .search {
-    width: 100%;
+    width: 50%;
     padding: 14px 16px;
-    border-radius: 12px;
+    border-radius: 20px;
     border: 1px solid #ddd;
     margin: 20px 0;
     font-size: 15px;
     outline: none;
     }
+        /* GRID DE TARJETAS */
+        .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+        }
 
-    .search:focus {
-    border-color: var(--yellow);
-    }
+        /* TARJETA */
+        .card {
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        border-left: 5px solid var(--yellow);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        }
 
-    /* GRID DE TARJETAS */
-    .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    }
+        .card:hover {
+        transform: translateY(-6px);
+        }
 
-    /* TARJETA */
-    .card {
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    border-left: 5px solid var(--yellow);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+        .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+        }
+
+        .card h3 {
+        margin: 15px 15px 5px;
+        }
+
+        .card p {
+        margin: 0 15px;
+        color: #666;
+        font-size: 14px;
+        }
+
+        .card span {
+        margin: 10px 15px;
+        color: #d35400;
+        font-weight: bold;
+        }
+
+        /* BOTÓN AGREGAR */
+        .add-btn {
+        margin: 0 15px 15px;
+        padding: 8px 14px;
+        background: var(--yellow);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        align-self: flex-start;
+        transition: 0.2s ease;
+        }
+
+        .add-btn:hover {
+        opacity: 0.9;
+        }
+    /* HEADER SUPERIOR */
+    .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
+    align-items: flex-start;  
+    gap: 12px;
+    margin-bottom: 30px;
     }
 
-    .card:hover {
-    transform: translateY(-6px);
+    /* LOGO */
+    .logo {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
     }
 
-    .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
+    .logo span {
+    color: #f4b400; 
     }
 
-    .card h3 {
-    margin: 15px 15px 5px;
-    }
-
-    .card p {
-    margin: 0 15px;
-    color: #666;
+    /* SUBTITULO */
+    .subtitle {
+    margin: 5px 0 0;
+    color: #777;
     font-size: 14px;
     }
 
-    .card span {
-    margin: 10px 15px;
-    color: #d35400;
-    font-weight: bold;
-    }
-
-    /* BOTÓN AGREGAR */
-    .add-btn {
-    margin: 0 15px 15px;
-    padding: 8px 14px;
-    background: var(--yellow);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    align-self: flex-start;
-    transition: 0.2s ease;
-    }
-
-    .add-btn:hover {
-    opacity: 0.9;
-    }
-
-/* PANEL DERECHO */
-    .budget {
+    .search:focus {
+    border-color: var(--yellow);
     background: white;
-    padding: 25px;
-    border-left: 1px solid #e5e5e5;
-    height: 100vh;
-    overflow-y: auto;
+    box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.15);
+    outline: none;
     }

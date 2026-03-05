@@ -2,7 +2,7 @@
     background: #0b0b0b;
     color: white;
     padding: 20px;
-    height: 100vh;          /* 🔥 clave */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     }

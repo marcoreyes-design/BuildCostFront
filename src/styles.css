@@ -71,14 +71,11 @@
     cursor: pointer;
     font-weight: 500;
     }
-
     /* CONTENIDO */
-
     .content {
     padding: 30px;
     overflow-y: auto;
     }
-
     html,body{
     overscroll-behavior: none;
 }

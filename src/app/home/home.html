@@ -1,11 +1,16 @@
-    <div class="app">
+    <div class="app" [class.drawer-open]="mostrarPresupuesto">
     <!-- SIDEBAR -->
     <app-sidebar></app-sidebar>
     <!-- CONTENIDO -->
     <main class="content">
-        <h1>Inicio</h1>
-        <p>Encuentra materiales de construcción</p>
-        <input class="search" placeholder="Buscar materiales..." />
+        <button class="note-trigger" (click)="togglePresupuesto()">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABTklEQVR4nO2asUrEQBBAH6J2niD6T1crNmIpiB+oveipv6BlLK7XDxgJTOQIXrLJ7s7GyzzYImEyM283yQbuwPllCXwCoqPSc6XyjKbaKL7ZRKk8o2mKbju2zjMfkdUfSy8dDYwdDV0xT0QgExKRFCKlby1xkZ4E1q9fySWybDURsyFWAXmyiVgjLqK4SGLERQISxO7mQ3ZvcZE53VqWiIvMSUR25WGXXRGxRFxEcZHEyJQe9lx9BDELEUvERRQXSYxMpI9oZHYiq4wfgZLg5wIJFSklEdrgYBFrXCR2ZlLjK7KNL52dI9P1gO+AuscaU/fYy6sGn2NL89rvqnuhMXVsL3ca/A6cYMdNT9363IfG3IYkPATe9IL6vyGXwIL87OuG2K670JVoJF6Ag9CkZ8DzBDZHaY1H4HToDO0B18ADsC7Y/Bq4B660J4f/wA9+ACWZ3AwTtAAAAABJRU5ErkJggg==" alt="file-2">
+    </button>
+        <div class="header">
+            <h1 class="logo">Build<span>Cost</span></h1>
+            <p class="subtitle">Encuentra materiales de construcción al mejor precio</p>
+            <input class="search" placeholder="🔍 Buscar materiales..." />
+        </div>
         <section class="cards">
         <div class="card">
             <img src="https://tse4.mm.bing.net/th/id/OIP.F68foglIGSAq02xI1qx1KQHaLw?rs=1&pid=ImgDetMain&o=7&rm=3">
@@ -19,12 +24,37 @@
             <p>Varilla corrugada</p>
             <span>$120 - $180 por pieza</span>
         </div>
+        <div class="card">
+            <img src="https://www.credmateriales.com.mx/wp-content/uploads/2022/10/VARILLA-CORRUGADA.png">
+            <h3>Varilla</h3>
+            <p>Varilla corrugada</p>
+            <span>$120 - $180 por pieza</span>
+        </div>
+        <div class="card">
+            <img src="https://www.credmateriales.com.mx/wp-content/uploads/2022/10/VARILLA-CORRUGADA.png">
+            <h3>Varilla</h3>
+            <p>Varilla corrugada</p>
+            <span>$120 - $180 por pieza</span>
+        </div>
         </section>
     </main>
-    <!-- PRESUPUESTO -->
-    <aside class="budget">
+
+    <aside class="budget-drawer">
+        <div class="drawer-header">
         <h3>Presupuesto</h3>
-        <p>No hay items agregados</p>
+        <button (click)="togglePresupuesto()">✖</button>
+        </div>
+
+    <div class="drawer-content">
+        <div class="budget-item">
+        <div>
+            <h4>Cemento</h4>
+            <small>$320 x 2</small>
+        </div>
+        <strong>$640</strong>
+        </div>
+    </div>
     </aside>
 
 </div>
+    

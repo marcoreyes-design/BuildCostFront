@@ -1,23 +1,21 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SidebarComponent],
+  imports: [SidebarComponent, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
-
+  mostrarPresupuesto = false;
+togglePresupuesto() {
+  this.mostrarPresupuesto = !this.mostrarPresupuesto;
+}
   generarPdf() {
-
-    // 🔹 Aquí iría tu lógica real de generación de PDF
-    // (por ejemplo jsPDF)
-
     const url = 'assets/pdfs/presupuesto-demo.pdf'; 
-    // Esto es solo ejemplo
-
     const nuevoPdf = {
       id: Date.now(),
       nombre: 'Presupuesto Casa 1',

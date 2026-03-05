@@ -5,18 +5,15 @@ import { CommonModule } from '@angular/common'; // 👈 IMPORTANTE para usar *ng
 @Component({
   selector: 'app-datosm2',
   standalone: true,
-  imports: [SidebarComponent, CommonModule], // 👈 agrega CommonModule
+  imports: [SidebarComponent, CommonModule],
   templateUrl: './datosm2.html',
   styleUrl: './datosm2.css',
 })
 export class Datosm2 {
-
   mostrarModal: boolean = false;
-
   abrirModal() {
     this.mostrarModal = true;
   }
-
   cerrarModal() {
     this.mostrarModal = false;
   }
