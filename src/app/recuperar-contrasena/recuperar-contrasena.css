@@ -15,7 +15,6 @@
     border-radius: 18px;
     box-shadow: 0 25px 45px rgba(0,0,0,0.2);
     text-align: center;
-    border-top: 8px solid #000000;
     }
 
     /* ===== LOGO ===== */
@@ -79,12 +78,13 @@
     button {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(to right, #919191, #000000);
+    background: #000000;
     border: none;
     border-radius: 10px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    color: white;
     }
 
     button:active {
