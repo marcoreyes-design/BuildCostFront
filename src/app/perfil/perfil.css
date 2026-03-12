@@ -1,47 +1,105 @@
-    /* PERFIL */
-    .subtitle {
-    color: #666;
-    margin-bottom: 30px;
-    }
+/* PERFIL */
+.subtitle {
+color: #666;
+margin-bottom: 30px;
+text-align: center;
+}
 
-    .profile-card {
-    background: white;
-    max-width: 750px;
-    margin: auto;
-    padding: 40px;
-    border-radius: 18px;
-    border-top: 6px solid var(--yellow);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
+/* TARJETA PERFIL */
+.profile-card {
+background: white;
+max-width: 750px;
+margin: auto;
+padding: 40px;
+border-radius: 18px;
+border-top: 6px solid var(--yellow);
+box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
 
-    .avatar {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 30px;
-    border-radius: 50%;
-    background: #fdf3d0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 4px solid var(--yellow);
-    }
+/* AVATAR */
+.avatar {
+width: 120px;
+height: 120px;
+margin: 0 auto 30px;
+border-radius: 50%;
+background: #fdf3d0;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 4px solid var(--yellow);
+}
 
-    .avatar .material-icons {
-    font-size: 50px;
-    color: #b45309;
-    }
+.avatar .material-icons {
+font-size: 50px;
+color: #b45309;
+}
 
-    .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    }
+/* GRID FORMULARIO */
+.form-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
 
-    .form-group {
-    display: flex;
-    flex-direction: column;
-    }
+/* CAMPOS */
+.form-group {
+display: flex;
+flex-direction: column;
+}
 
-    .form-group.full {
-    grid-column: span 2;
-    }
+.form-group.full {
+grid-column: span 2;
+}
+
+/* ========================== */
+/* RESPONSIVE */
+/* ========================== */
+
+/* TABLET */
+@media (max-width: 900px){
+
+.profile-card{
+padding: 30px;
+}
+
+.form-grid{
+grid-template-columns: 1fr;
+}
+
+.form-group.full{
+grid-column: span 1;
+}
+
+}
+
+/* MOVIL */
+@media (max-width:600px){
+
+.profile-card{
+padding: 20px;
+border-radius: 14px;
+}
+
+.avatar{
+width: 90px;
+height: 90px;
+}
+
+.avatar .material-icons{
+font-size: 36px;
+}
+
+.subtitle{
+font-size: 14px;
+}
+
+}
+
+/* MOVIL PEQUEÑO */
+@media (max-width:400px){
+
+.profile-card{
+padding: 15px;
+}
+
+}

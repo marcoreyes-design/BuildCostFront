@@ -90,3 +90,50 @@ button {
 }
 
 
+/* ====================== */
+/* RESPONSIVE */
+/* ====================== */
+
+/* Tablet */
+@media (max-width:768px){
+
+.login-card{
+padding:30px 25px;
+}
+
+h1{
+font-size:20px;
+}
+
+}
+
+/* Móvil */
+@media (max-width:480px){
+
+.login-container{
+padding:15px;
+}
+
+.login-card{
+padding:25px 20px;
+border-radius:12px;
+}
+
+h1{
+font-size:18px;
+}
+
+.subtitle{
+font-size:13px;
+}
+
+.input-group{
+padding:8px;
+}
+
+button{
+padding:12px;
+font-size:15px;
+}
+
+}

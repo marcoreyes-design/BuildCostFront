@@ -10,17 +10,16 @@ body {
 margin: 0;
 font-family: 'Segoe UI', sans-serif;
 background: var(--gray);
+overscroll-behavior: auto;
 }
 
 /* ========================= */
 /* LAYOUT PRINCIPAL GLOBAL  */
 /* ========================= */
 
-.app {
-display: grid;
-grid-template-columns: 240px 1fr 320px;
-height: 100vh;
-gap: 20px;
+.app{
+display:flex;
+min-height:100vh;
 }
 
 /* SIDEBAR */
@@ -31,6 +30,9 @@ color: white;
 padding: 20px;
 display: flex;
 flex-direction: column;
+position: sticky;
+top: 0;
+height: 100vh;
 }
 
 .sidebar h2 {
@@ -72,13 +74,18 @@ cursor: pointer;
 font-weight: 500;
 }
 /* CONTENIDO */
-.content {
-padding: 30px;
-overflow-y: auto;
+.content{
+flex:1;
+padding:30px;
+width:100%;
+overscroll-behavior:contain;
 }
 
 html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
+margin: 0;
+height: 100%;
+
+}
+*{
+box-sizing:border-box;
 }

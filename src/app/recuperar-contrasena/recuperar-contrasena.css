@@ -95,3 +95,62 @@
     .back {
     margin-top: 22px;
     }
+/* ======================= */
+/* RESPONSIVE */
+/* ======================= */
+
+/* Tablet */
+@media (max-width:768px){
+
+.login-card{
+padding:30px 25px;
+}
+
+h1{
+font-size:22px;
+}
+
+.logo .icon{
+width:55px;
+height:55px;
+font-size:26px;
+}
+
+}
+
+/* Móvil */
+@media (max-width:480px){
+
+.login-container{
+padding:15px;
+}
+
+.login-card{
+padding:25px 20px;
+border-radius:14px;
+}
+
+h1{
+font-size:20px;
+}
+
+.subtitle{
+font-size:13px;
+}
+
+.logo .icon{
+width:48px;
+height:48px;
+font-size:22px;
+}
+
+.input-group{
+padding:8px;
+}
+
+button{
+padding:12px;
+font-size:15px;
+}
+
+}

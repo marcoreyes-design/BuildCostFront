@@ -25,7 +25,6 @@
     padding: 60px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-top: 4px solid #f4a100;
     }
 
     .icon {
@@ -39,7 +38,6 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-top: 4px solid #f4a100;
     }
 
     table {
@@ -60,10 +58,94 @@
     font-size: 18px;
     }
 
-    .note {
-    margin-top: 25px;
-    padding: 15px;
-    border: 1px solid #f4a100;
-    border-radius: 10px;
-    background: #fff7e6;
-    }
+    /* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width:1024px){
+
+.app{
+grid-template-columns: 200px 1fr;
+}
+
+.content{
+padding:30px;
+}
+
+.empty-box{
+padding:40px;
+}
+
+}
+
+/* ========================= */
+/* MOVIL */
+/* ========================= */
+
+@media (max-width:768px){
+
+.app{
+grid-template-columns:1fr;
+height:auto;
+}
+
+.content{
+padding:20px;
+}
+
+/* tabla adaptable */
+.table-container{
+overflow-x:auto;
+}
+
+table{
+min-width:600px;
+}
+
+/* caja vacía */
+.empty-box{
+padding:30px;
+}
+
+.icon{
+font-size:40px;
+}
+
+.note{
+font-size:14px;
+}
+
+}
+
+/* ========================= */
+/* MOVIL PEQUEÑO */
+/* ========================= */
+
+@media (max-width:480px){
+
+.content{
+padding:15px;
+}
+
+.subtitle{
+font-size:14px;
+}
+
+th, td{
+padding:10px;
+font-size:14px;
+}
+
+.empty-box{
+padding:25px;
+}
+
+.icon{
+font-size:32px;
+}
+
+.actions button{
+font-size:16px;
+}
+
+}

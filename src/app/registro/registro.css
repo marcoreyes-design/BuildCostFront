@@ -53,3 +53,43 @@
     .back {
     margin-top: 20px;
     }
+
+/* ====================== */
+/* RESPONSIVE */
+/* ====================== */
+
+/* Tablet */
+@media (max-width:768px){
+
+.login-card{
+padding:25px;
+}
+
+}
+
+/* Móvil */
+@media (max-width:480px){
+
+.login-container{
+padding:15px;
+}
+
+.login-card{
+padding:20px;
+border-radius:14px;
+}
+
+label{
+font-size:14px;
+}
+
+input{
+font-size:13px;
+}
+
+button{
+padding:11px;
+font-size:15px;
+}
+
+}

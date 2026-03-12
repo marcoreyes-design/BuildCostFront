@@ -18,12 +18,12 @@
     }
 
     .subtitle {
-    color: #6b7280;
+    color: #ffffff;
     margin-top: 5px;
     }
 
     .btn-nuevo {
-    background: #f4a100;
+    background: #8a8a8a;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
@@ -32,16 +32,11 @@
     transition: 0.2s;
     }
 
-    .btn-nuevo:hover {
-    background: #d98e00;
-    }
-
     .table-container {
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-top: 4px solid #f4a100;
+    box-shadow: 0 4px 12px #f3efef14;
     }
 
     table {
@@ -62,11 +57,6 @@
     td {
     padding: 15px;
     border-top: 1px solid #eee;
-    }
-
-    .price {
-    color: #f4a100;
-    font-weight: 600;
     }
 
     .actions {
@@ -138,3 +128,96 @@
     border-radius: 8px;
     cursor: pointer;
     }
+    /* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width:1024px){
+
+.app{
+grid-template-columns: 200px 1fr;
+}
+
+.content{
+padding:30px;
+}
+
+.header{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+}
+
+/* ========================= */
+/* MOVIL */
+/* ========================= */
+
+@media (max-width:768px){
+
+.app{
+grid-template-columns:1fr;
+}
+
+.content{
+padding:20px;
+}
+
+/* tabla scroll horizontal */
+.table-container{
+overflow-x:auto;
+}
+
+table{
+min-width:600px;
+}
+
+.btn-nuevo{
+width:100%;
+text-align:center;
+}
+
+.header{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+}
+
+/* ========================= */
+/* MOVIL PEQUEÑO */
+/* ========================= */
+
+@media (max-width:480px){
+
+.content{
+padding:15px;
+}
+
+th,
+td{
+padding:10px;
+font-size:14px;
+}
+
+.actions{
+font-size:16px;
+}
+
+.modal{
+width:95%;
+padding:20px;
+}
+
+.modal-actions{
+flex-direction:column;
+}
+
+.btn-guardar,
+.btn-cancelar{
+width:100%;
+}
+
+}

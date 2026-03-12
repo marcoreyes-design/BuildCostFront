@@ -8,4 +8,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })
-export class SidebarComponent {}
+export class SidebarComponent {
+
+  sidebarOpen = false;
+
+  toggleSidebar(){
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
+}

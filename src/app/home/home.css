@@ -43,11 +43,6 @@ border: none;
 font-size: 18px;
 cursor: pointer;
 }
-.drawer-body {
-flex: 1;
-padding: 20px;
-overflow-y: auto;
-}
 /* ITEM DEL PRESUPUESTO */
 .budget-item {
 display: flex;
@@ -58,7 +53,6 @@ padding: 14px 16px;
 border-radius: 14px;
 margin-bottom: 12px;
 transition: all 0.2s ease;
-border-left: 4px solid #f4b400;
 }
 .budget-item h4 {
 margin: 0;
@@ -131,4 +125,91 @@ font-weight: bold;
 }
 .add-btn:hover {
 opacity: 0.9;
+}
+.contenedor {
+text-align: right;
+
+}
+.button {
+padding: 10px 20px;
+width: 100px;
+background-color: #000000;
+color: white;
+border: none;
+border-radius: 20px;
+cursor: pointer;
+}   
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+/* TABLET */
+@media (max-width: 1024px){
+
+.search{
+width: 70%;
+}
+
+.cards{
+grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+}
+
+.app.drawer-open .content{
+margin-right: 350px;
+}
+
+.budget-drawer{
+width: 350px;
+}
+
+}
+
+/* MOVIL */
+@media (max-width: 768px){
+
+.content{
+padding:20px;
+}
+
+.search{
+width: 100%;
+}
+
+.cards{
+grid-template-columns: 1fr;
+}
+
+/* Drawer ocupa toda la pantalla */
+.budget-drawer{
+width: 100%;
+}
+
+/* ya no empuja el contenido */
+.app.drawer-open .content{
+margin-right:0;
+}
+
+}
+
+/* MOVIL PEQUEÑO */
+@media (max-width:480px){
+
+.content{
+padding:15px;
+}
+
+.card img{
+height:150px;
+}
+
+.note-trigger{
+right:15px;
+top:15px;
+}
+
+.button{
+width:100%;
+}
+
 }
