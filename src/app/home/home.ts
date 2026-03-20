@@ -10,10 +10,36 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.css'
 })
 export class Home {
+
   mostrarPresupuesto = false;
-togglePresupuesto() {
-  this.mostrarPresupuesto = !this.mostrarPresupuesto;
-}
+  presupuesto: any[] = [];
+
+  togglePresupuesto() {
+    this.mostrarPresupuesto = !this.mostrarPresupuesto;
+  }
+  agregarProducto(nombre: string, precio: number) {
+    const productoExistente = this.presupuesto.find(p => p.nombre === nombre);
+
+    if (productoExistente) {
+      productoExistente.cantidad += 1;
+    } 
+    else {
+      this.presupuesto.push({
+        nombre: nombre,
+        precio: precio,
+        cantidad: 1
+      });
+    }
+    console.log(this.presupuesto);
+  }
+
+  // total
+  getTotal() {
+    return this.presupuesto.reduce((total, item) => {
+      return total + (item.precio * item.cantidad);
+    }, 0);
+  }
+//----------------------------------------------------------
   generarPdf() {
     const url = 'assets/pdfs/presupuesto-demo.pdf'; 
     const nuevoPdf = {
@@ -25,6 +51,7 @@ togglePresupuesto() {
     const pdfs = JSON.parse(localStorage.getItem('pdfs') || '[]');
     pdfs.push(nuevoPdf);
     localStorage.setItem('pdfs', JSON.stringify(pdfs));
+
     alert('PDF guardado correctamente');
   }
 }

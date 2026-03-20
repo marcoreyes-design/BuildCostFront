@@ -1,11 +1,12 @@
-    <div class="app" [class.drawer-open]="mostrarPresupuesto">
+
+<div class="app" [class.drawer-open]="mostrarPresupuesto">
     <!-- SIDEBAR -->
     <app-sidebar></app-sidebar>
     <!-- CONTENIDO -->
     <main class="content">
         <button class="note-trigger" (click)="togglePresupuesto()">
-        <img src="/assets/img/icons8-archivo-50.png" alt="file-2">
-    </button>
+            <img src="/assets/img/icons8-archivo-50.png" alt="file-2">
+        </button>
         <div class="header">
             <h1 class="logo">Build<span>Cost</span></h1>
             <p class="subtitle">Encuentra materiales de construcción al mejor precio</p>
@@ -18,26 +19,37 @@
             <p>Cemento Portland de alta calidad</p>
             <div class="contenedor">
             <span>$320 por bulto</span>
-            <button class="button">Agregar</button></div>
-            
+            <button class="button" (click)="agregarProducto('Cemento', 320)">Agregar</button>
+            </div>
         </div>
+        
         <div class="card">
             <img src="/assets/img/home/varilla.png">
             <h3>Varilla</h3>
             <p>Varilla corrugada</p>
-            <span>$120 - $180 por pieza</span>
+            <div class="contenedor">
+            <span>$320 varilla</span>
+            <button class="button" (click)="agregarProducto('Varilla', 320)">Agregar</button>
+            </div>
         </div>
+
         <div class="card">
             <img src="/assets/img/home/block.jpg">
             <h3>Block</h3>
             <p>Block de concreto</p>
-            <span>$10 por pieza</span>
+            <div class="contenedor">
+            <span>$320 por bulto</span>
+            <button class="button" (click)="agregarProducto('Block', 320)">Agregar</button>
+            </div>
         </div>
         <div class="card">
             <img src="/assets/img/home/grava.jpg">
             <h3>Grava</h3>
             <p>Grava de construcción</p>
-            <span>$80 - $120 por tonelada</span>
+            <div class="contenedor">
+            <span>$320 por bulto</span>
+            <button class="button" (click)="agregarProducto('Grava', 320)">Agregar</button>
+            </div>
         </div>
         </section>
     </main>
@@ -49,15 +61,17 @@
         </div>
 
     <div class="drawer-content">
-        <div class="budget-item">
-        <div>
-            <h4>Cemento</h4>
-            <small>$320 x 2</small>
+        <div class="total">
+    <h3>Total: ${{getTotal()}}</h3>
         </div>
-        <strong>$640</strong>
-        </div>
+            <div class="budget-item" *ngFor="let item of presupuesto">
+                <div>
+                <h4>{{item.nombre}}</h4>
+                <small>${{item.precio}} x {{item.cantidad}}</small>
+                </div>
+                <strong>${{item.precio * item.cantidad}}</strong>
+            </div>
     </div>
     </aside>
-
 </div>
     
