@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SidebarComponent, CommonModule],
+  imports: [SidebarComponent, CommonModule, FormsModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -13,13 +14,13 @@ export class Home {
 
   mostrarPresupuesto = false;
   presupuesto: any[] = [];
+  i: number = 0;
 
   togglePresupuesto() {
     this.mostrarPresupuesto = !this.mostrarPresupuesto;
   }
   agregarProducto(nombre: string, precio: number) {
     const productoExistente = this.presupuesto.find(p => p.nombre === nombre);
-
     if (productoExistente) {
       productoExistente.cantidad += 1;
     } 
@@ -31,7 +32,7 @@ export class Home {
       });
     }
     console.log(this.presupuesto);
-  }
+    }
 
   // total
   getTotal() {
@@ -39,6 +40,17 @@ export class Home {
       return total + (item.precio * item.cantidad);
     }, 0);
   }
+  // Catidad de productos
+  aumentar(item: any) {
+  item.cantidad++;
+  }
+
+disminuir(item: any) {
+  if (item.cantidad > 1) {
+    item.cantidad--;
+  }
+}
+
 //----------------------------------------------------------
   generarPdf() {
     const url = 'assets/pdfs/presupuesto-demo.pdf'; 
@@ -54,4 +66,8 @@ export class Home {
 
     alert('PDF guardado correctamente');
   }
+// Eliminar producto del presupuesto
+  eliminarProducto(index: number) {
+  this.presupuesto.splice(index, 1);
+}
 }

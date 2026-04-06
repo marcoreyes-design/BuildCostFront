@@ -22,7 +22,6 @@
             <button class="button" (click)="agregarProducto('Cemento', 320)">Agregar</button>
             </div>
         </div>
-        
         <div class="card">
             <img src="/assets/img/home/varilla.png">
             <h3>Varilla</h3>
@@ -32,7 +31,6 @@
             <button class="button" (click)="agregarProducto('Varilla', 320)">Agregar</button>
             </div>
         </div>
-
         <div class="card">
             <img src="/assets/img/home/block.jpg">
             <h3>Block</h3>
@@ -59,6 +57,12 @@
         <h3>Presupuesto</h3>
         <button (click)="togglePresupuesto()">✖</button>
         </div>
+        
+        <div class="drawer-footer">
+        <button class="btn-pdf" (click)="generarPdf()">
+        📄 Generar PDF
+        </button>
+        </div>
 
     <div class="drawer-content">
         <div class="total">
@@ -66,11 +70,18 @@
         </div>
             <div class="budget-item" *ngFor="let item of presupuesto">
                 <div>
-                <h4>{{item.nombre}}</h4>
-                <small>${{item.precio}} x {{item.cantidad}}</small>
+                    <h4>{{item.nombre}}</h4>
+                    <small>${{item.precio}}</small>
                 </div>
-                <strong>${{item.precio * item.cantidad}}</strong>
+            <strong>${{item.precio * item.cantidad}}</strong>
+            <div class="cantidad-control">
+                <button (click)="disminuir(item)">−</button>
+                <input type="number" [(ngModel)]="item.cantidad" min="1">
+                <button (click)="aumentar(item)">+</button>
             </div>
+            <!-- BOTÓN ELIMINAR -->
+            <button class="btn-eliminar" (click)="eliminarProducto(i)"> <img src="/assets/img/eliminar.png" alt="Eliminar"> </button>
+    </div>
     </div>
     </aside>
 </div>
