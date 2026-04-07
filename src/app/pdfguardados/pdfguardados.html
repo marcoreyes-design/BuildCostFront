@@ -31,7 +31,7 @@
                 <td>{{ pdf.nombre }}</td>
                 <td>{{ pdf.fecha }}</td>
                 <td class="actions">
-                <button (click)="descargarPdf(pdf.url)">⬇</button>
+                <button (click)="descargarPdf(pdf.url, pdf.nombre)"><img src="/assets/img/descargar.png" alt="Descargar"></button>
                 <button (click)="eliminarPdf(pdf.id)">🗑</button>
                 </td>
             </tr>

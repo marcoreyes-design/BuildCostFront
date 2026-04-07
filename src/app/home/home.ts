@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-home',
@@ -52,20 +53,55 @@ disminuir(item: any) {
 }
 
 //----------------------------------------------------------
-  generarPdf() {
-    const url = 'assets/pdfs/presupuesto-demo.pdf'; 
-    const nuevoPdf = {
-      id: Date.now(),
-      nombre: 'Presupuesto Casa 1',
-      fecha: new Date().toLocaleDateString(),
-      url: url
-    };
-    const pdfs = JSON.parse(localStorage.getItem('pdfs') || '[]');
-    pdfs.push(nuevoPdf);
-    localStorage.setItem('pdfs', JSON.stringify(pdfs));
-
-    alert('PDF guardado correctamente');
+generarPdf() {
+  if (this.presupuesto.length === 0) {
+    alert('No hay productos');
+    return;
   }
+
+  const doc = new jsPDF();
+
+  let y = 10;
+
+  doc.setFontSize(18);
+  doc.text('Presupuesto BuildCost', 10, y);
+
+  y += 10;
+  doc.setFontSize(12);
+
+  this.presupuesto.forEach((item, index) => {
+    doc.text(
+      `${index + 1}. ${item.nombre} - $${item.precio} x ${item.cantidad} = $${item.precio * item.cantidad}`,
+      10,
+      y
+    );
+    y += 8;
+  });
+
+  y += 10;
+
+  doc.setFontSize(14);
+  doc.text(`Total: $${this.getTotal()}`, 10, y);
+
+  // 🔥 Generar archivo en memoria
+  const blob = doc.output('blob');
+  const url = URL.createObjectURL(blob);
+
+  // Guardar en localStorage
+  const nuevoPdf = {
+    id: Date.now(),
+    nombre: 'Presupuesto',
+    fecha: new Date().toLocaleDateString(),
+    url: url
+  };
+
+  const pdfs = JSON.parse(localStorage.getItem('pdfs') || '[]');
+  pdfs.push(nuevoPdf);
+  localStorage.setItem('pdfs', JSON.stringify(pdfs));
+
+  // 🔥 Descargar automáticamente
+  doc.save('presupuesto.pdf');
+}
 // Eliminar producto del presupuesto
   eliminarProducto(index: number) {
   this.presupuesto.splice(index, 1);

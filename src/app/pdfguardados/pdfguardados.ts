@@ -28,8 +28,10 @@ export class Pdfguardados implements OnInit {
     this.pdfs = this.pdfs.filter(p => p.id !== id);
     localStorage.setItem('pdfs', JSON.stringify(this.pdfs));
   }
-
-  descargarPdf(url: string) {
-    window.open(url, '_blank');
-  }
+  descargarPdf(url: string, nombre: string) {
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = nombre + '.pdf'; // nombre del archivo
+  link.click();
+}
 }
